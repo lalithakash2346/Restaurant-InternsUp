@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Canvas Menu</title>
+    <link rel="stylesheet" href="Res.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+  
+        .navbar-brand img {
+            height: 80px;
+        }
+  
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+        }
+  
+        .menu-page {
+            padding: 50px;
+            margin-top: 100px;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+  
+        .menu-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #343a40;
+            grid-column: span 2;
+        }
+  
+        .menu-section {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+  
+        .menu-section img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+            flex: 1 1 250px;
+        }
+  
+        .menu-section .menu-details {
+            text-align: left;
+            flex: 2 1 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+  
+        .menu-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #495057;
+            text-align: center;
+        }
+  
+        .menu-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+  
+        .menu-section ul li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #6c757d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+  
+        .price {
+            color: #888;
+        }
+  
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+  
+        .quantity-controls button {
+            background: #343a40;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+  
+        .quantity-controls input {
+            width: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+  
+        .footer {
+            background: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+  
+        .footer h2, .footer h3 {
+            color: #fff;
+        }
+  
+        .footer .social-media a {
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-brand img {
+            height: 80px;
+        }
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+        }
+        .menu-page {
+            padding: 50px;
+            margin-top: 100px;
+        }
+        .menu-section {
+            margin-bottom: 30px;
+        }
+        .menu-section img {
+            width: 100%;
+            height: auto;
+        }
+        .menu-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .menu-details li {
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+        }
+        .quantity-controls button {
+            margin: 0 5px;
+        }
+        .quantity-controls input {
+            width: 50px;
+            text-align: center;
+        }
+        .order-button {
+            margin: auto;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .order-actions-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="Home-Page.html"><img src="images/Logo.png" style="height: 110px;"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item m-4">
+              <a class="nav-link text" href="Book-Table.html"><i class="fas fa-info-circle"></i> Book Table</a>
+            </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text" href="Order-Food.html"><i class="fa-solid fa-star"></i> Order Food</a>
+            </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text" href="#Contact-info"><i class="fa-solid fa-location-crosshairs"></i> Hours and Location</a>
+            </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text" href="#Contact-info"><i class="fa-solid fa-phone"></i> Contact Info</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    
+    <form id="orderForm" onsubmit="event.preventDefault(); submitOrder();">
+    <div class="menu-page">
+        <div class="menu-section">
+            <img src="images/Starters.jpg" alt="Starters">
+            <div class="menu-details">
+                <h2>Starters</h2>
+                <ul>
+                    <li>
+                        Spring Rolls - ₹150
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Spring Rolls" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Garlic Bread - ₹120
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Garlic Bread" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Chicken Wings - ₹180
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Chicken Wings" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Stuffed Mushrooms - ₹170
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Stuffed Mushrooms" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Bruschetta - ₹130
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Bruschetta" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Onion Rings - ₹140
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Onion Rings" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Calamari - ₹200
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Calamari" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Potato Skins - ₹160
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Potato Skins" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Nachos - ₹190
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Nachos" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Quesadillas - ₹210
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Quesadillas" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Biryani.jpg" alt="Biryani">
+            <div class="menu-details">
+                <h2>Biryani</h2>
+                <ul>
+                    <li>
+                        Chicken Biryani - ₹300
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Chicken Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Beef Biryani - ₹350
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Beef Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Vegetable Biryani - ₹250
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Vegetable Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Hyderabadi Biryani - ₹400
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Hyderabadi Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Mutton Biryani - ₹450
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Mutton Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Paneer Biryani - ₹270
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Paneer Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Spicy Biryani - ₹320
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Spicy Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Boneless Chicken Biryani - ₹340
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Boneless Chicken Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Kashmiri Biryani - ₹370
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Kashmiri Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Chennai Biryani - ₹360
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Chennai Biryani" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>        
+
+        <div class="menu-section">
+            <img src="images/Pizza.jpg" alt="Pizzas">
+            <div class="menu-details">
+                <h2>Pizzas</h2>
+                <ul>
+                    <li>
+                        Margherita Pizza - ₹250
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Margherita Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Pepperoni Pizza - ₹350
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Pepperoni Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Veg Supreme Pizza - ₹300
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Veg Supreme Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        BBQ Chicken Pizza - ₹400
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="BBQ Chicken Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Mushroom Pizza - ₹280
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Mushroom Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Hawaiian Pizza - ₹320
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Hawaiian Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Four Cheese Pizza - ₹350
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Four Cheese Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Pesto Pizza - ₹330
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Pesto Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Sicilian Pizza - ₹370
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Sicilian Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Capricciosa Pizza - ₹340
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Capricciosa Pizza" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>        
+
+        <div class="menu-section">
+            <img src="images/Coffee.jpg" alt="Tea and Coffees">
+            <div class="menu-details">
+                <h2>Tea and Coffees</h2>
+                <ul>
+                    <li>
+                        Masala Tea - ₹80
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Masala Tea" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Americano - ₹120
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Americano" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Cappuccino - ₹150
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Cappuccino" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Latte - ₹140
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Latte" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Green Tea - ₹100
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Green Tea" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Espresso - ₹110
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Espresso" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Iced Coffee - ₹160
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Iced Coffee" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Mocha - ₹170
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Mocha" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Herbal Tea - ₹90
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Herbal Tea" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Hot Chocolate - ₹130
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Hot Chocolate" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Milkshakes-Smoothies.jpg" alt="Milkshakes">
+            <div class="menu-details">
+                <h2>Milkshakes and Smoothies</h2>
+                <ul>
+                    <li>
+                        Chocolate Milkshake - ₹180
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Chocolate Milkshake" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Strawberry Milkshake - ₹190
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Strawberry Milkshake" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Vanilla Milkshake - ₹170
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Vanilla Milkshake" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Mango Smoothie - ₹200
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Mango Smoothie" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Berry Smoothie - ₹210
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Berry Smoothie" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Green Smoothie - ₹220
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Green Smoothie" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Tropical Smoothie - ₹230
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Tropical Smoothie" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Coffee Smoothie - ₹240
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Coffee Smoothie" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Desserts.jpg" alt="Desserts">
+            <div class="menu-details">
+                <h2>Desserts</h2>
+                <ul>
+                    <li>
+                        Chocolate Cake - ₹220
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Chocolate Cake" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Cheesecake - ₹250
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Cheesecake" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Brownie - ₹180
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Brownie" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Apple Pie - ₹200
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Apple Pie" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Tiramisu - ₹240
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Tiramisu" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Panna Cotta - ₹210
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Panna Cotta" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Lava Cake - ₹260
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Lava Cake" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <!-- Additional dessert items -->
+                    <li>
+                        Macarons - ₹190
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Macarons" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Gelato - ₹230
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Gelato" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Crème Brûlée - ₹270
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Crème Brûlée" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Pudding - ₹200
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Pudding" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Salad.jpg" alt="Salads">
+            <div class="menu-details">
+                <h2>Salads</h2>
+                <ul>
+                    <li>
+                        Caesar Salad - ₹150
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Caesar Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Greek Salad - ₹170
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Greek Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Cobb Salad - ₹180
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Cobb Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Garden Salad - ₹140
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Garden Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Spinach Salad - ₹160
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Spinach Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Quinoa Salad - ₹200
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Quinoa Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Avocado Salad - ₹190
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Avocado Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <!-- Additional salad items -->
+                    <li>
+                        Asian Slaw - ₹170
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Asian Slaw" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Caprese Salad - ₹190
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Caprese Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Mediterranean Salad - ₹210
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Mediterranean Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                    <li>
+                        Roasted Beet Salad - ₹180
+                        <div class="quantity-controls">
+                            <button type="button" onclick="decreaseQuantity(this)">-</button>
+                            <input type="text" name="Roasted Beet Salad" value="0" readonly>
+                            <button type="button" onclick="increaseQuantity(this)">+</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        </div>
+        <div class="order-actions order-actions-container m-auto">
+            <button type="submit" class="btn btn-primary" style="margin-bottom: 90px">Place Order</button>
+        </div>        
+</form>
+<footer class="footer" id="Contact-info">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>Crimson Canvas</h2>
+                <p style="font-size: 18px;">A Feast For The Senses.</p>
+            </div>
+            <div class="footer-middle">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li>Email: noreply@crimsoncanvas.com</li>
+                    <li>Phone: +91 99496 73148</li>
+                    <li>Address: Opposite Ramanaidu Studios, Dr NTR Beach Rd, Thimmapuram, Visakhapatnam, Andhra Pradesh-530048</li>
+                </ul>
+            </div>
+            <div class="footer-middle">
+              <h3>Timings</h3>
+              <ul>
+                  <li>Monday-Friday : 12pm to 11 pm</li>
+                  <li>Saturday & Sunday : 11am to 11:30pm</li>
+              </ul>
+          </div>
+            <div class="footer-right">
+                <h3>Follow Us</h3>
+                <ul class="social-media">
+                    <li><a href="https://www.facebook.com/lalith.akash.66"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://x.com/LalithAkash2346"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/lalithakash/"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/lalith-akash-kolli/"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+function decreaseQuantity(button) {
+    var input = button.nextElementSibling;
+    var value = parseInt(input.value);
+    if (value > 0) {
+        input.value = value - 1;
+    }
+}
+
+function increaseQuantity(button) {
+    var input = button.previousElementSibling;
+    var value = parseInt(input.value);
+    input.value = value + 1;
+}
+
+function submitOrder() {
+    var form = document.getElementById('orderForm');
+    var formData = new FormData(form);
+    var order = [];
+
+    formData.forEach((value, key) => {
+        var quantity = parseInt(value);
+        if (quantity > 0) {
+            var itemName = key;
+            var itemPrice = document.querySelector(`input[name="${itemName}"]`).parentElement.previousSibling.textContent.split(' - ₹')[1].trim();
+            order.push({ name: itemName, price: itemPrice, quantity: quantity });
+        }
+    });
+
+    var orderData = {
+        items: order
+    };
+
+    fetch('/place-order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(orderData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message === 'Order placed successfully!') {
+            window.location.href = '/bill';
+        } else {
+            alert('Error placing order: ' + data.error);
+        }
+    })
+    .catch(error => {
+        alert('Error placing order: ' + error.message);
+    });
+}
+
+</script>
+</body>
+</html>
+

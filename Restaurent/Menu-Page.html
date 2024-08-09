@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Canvas Menu</title>
+    <link rel="stylesheet" href="Res.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+  
+        .navbar-brand img {
+            height: 80px;
+        }
+  
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+        }
+  
+        .menu-page {
+            padding: 50px;
+            margin-top: 100px;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+  
+        .menu-page h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #343a40;
+            grid-column: span 2;
+        }
+  
+        .menu-section {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+  
+        .menu-section img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+            flex: 1 1 250px;
+        }
+  
+        .menu-section .menu-details {
+            text-align: left;
+            flex: 2 1 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+  
+        .menu-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #495057;
+            text-align: center;
+        }
+  
+        .menu-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+  
+        .menu-section ul li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #6c757d;
+        }
+  
+        .price {
+            color: #888;
+        }
+  
+        .footer {
+            background: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+  
+        .footer h2, .footer h3 {
+            color: #fff;
+        }
+  
+        .footer .social-media a {
+            color: #fff;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="Home-Page.html"><img src="images/Logo.png" style="height: 110px;"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item m-4">
+              <a class="nav-link text" href="Menu-Page.html"><i class="fa-solid fa-bars"></i> Menus</a>
+            </li>
+            <li class="nav-item m-4">
+              <a class="nav-link text" href="About.html"><i class="fas fa-info-circle"></i> About</a>
+            </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text" href="Reviews.html"><i class="fa-solid fa-star"></i> Reviews</a>
+              </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text" href="#Contact-info"><i class="fa-solid fa-location-crosshairs"></i> Hours and Location</a>
+            </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text" href="#Contact-info"><i class="fa-solid fa-phone"></i> Contact Info</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    
+    <div class="menu-page">
+        <div class="menu-section">
+            <img src="images/Starters.jpg" alt="Starters">
+            <div class="menu-details">
+                <h2>Starters</h2>
+                <ul>
+                    <li>Spring Rolls - ₹150</li>
+                    <li>Garlic Bread - ₹120</li>
+                    <li>Chicken Wings - ₹180</li>
+                    <li>Stuffed Mushrooms - ₹170</li>
+                    <li>Bruschetta - ₹130</li>
+                    <li>Onion Rings - ₹140</li>
+                    <li>Calamari - ₹200</li>
+                    <li>Potato Skins - ₹160</li>
+                    <li>Nachos - ₹190</li>
+                    <li>Quesadillas - ₹210</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <img src="images/Biryani.jpg" alt="Biryani">
+            <div class="menu-details">
+                <h2>Biryani</h2>
+                <ul>
+                    <li>Chicken Biryani - ₹300</li>
+                    <li>Beef Biryani - ₹350</li>
+                    <li>Vegetable Biryani - ₹250</li>
+                    <li>Hyderabadi Biryani - ₹400</li>
+                    <li>Mutton Biryani - ₹450</li>
+                    <li>Paneer Biryani - ₹270</li>
+                    <li>Spicy Biryani - ₹320</li>
+                    <li>Boneless Chicken Biryani - ₹340</li>
+                    <li>Kashmiri Biryani - ₹370</li>
+                    <li>Chennai Biryani - ₹360</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Pizza.jpg" alt="Pizzas">
+            <div class="menu-details">
+                <h2>Pizzas</h2>
+                <ul>
+                    <li>Margherita Pizza - ₹250</li>
+                    <li>Pepperoni Pizza - ₹350</li>
+                    <li>Veg Supreme Pizza - ₹300</li>
+                    <li>BBQ Chicken Pizza - ₹400</li>
+                    <li>Mushroom Pizza - ₹280</li>
+                    <li>Hawaiian Pizza - ₹320</li>
+                    <li>Four Cheese Pizza - ₹350</li>
+                    <li>Pesto Pizza - ₹330</li>
+                    <li>Sicilian Pizza - ₹370</li>
+                    <li>Capricciosa Pizza - ₹340</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Coffee.jpg" alt="Tea and Coffees">
+            <div class="menu-details">
+                <h2>Tea and Coffees</h2>
+                <ul>
+                    <li>Masala Tea - ₹80</li>
+                    <li>Americano - ₹120</li>
+                    <li>Latte - ₹150</li>
+                    <li>Espresso - ₹100</li>
+                    <li>Green Tea - ₹90</li>
+                    <li>Cappuccino - ₹140</li>
+                    <li>Mocha - ₹160</li>
+                    <li>Irish Coffee - ₹180</li>
+                    <li>Chai Latte - ₹130</li>
+                    <li>Black Coffee - ₹110</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Milkshakes-Smoothies.jpg" alt="Milkshakes and Smoothies">
+            <div class="menu-details">
+                <h2>Milkshakes and Smoothies</h2>
+                <ul>
+                    <li>Chocolate Milkshake - ₹180</li>
+                    <li>Strawberry Smoothie - ₹200</li>
+                    <li>Banana Milkshake - ₹160</li>
+                    <li>Mango Smoothie - ₹220</li>
+                    <li>Vanilla Milkshake - ₹170</li>
+                    <li>Blueberry Smoothie - ₹210</li>
+                    <li>Oreo Milkshake - ₹190</li>
+                    <li>Pineapple Smoothie - ₹230</li>
+                    <li>Peach Milkshake - ₹180</li>
+                    <li>Avocado Smoothie - ₹240</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Desserts.jpg" alt="Desserts">
+            <div class="menu-details">
+                <h2>Desserts</h2>
+                <ul>
+                    <li>Chocolate Lava Cake - ₹220</li>
+                    <li>Cheesecake - ₹250</li>
+                    <li>Brownies - ₹200</li>
+                    <li>Apple Pie - ₹210</li>
+                    <li>Tiramisu - ₹260</li>
+                    <li>Crème Brûlée - ₹280</li>
+                    <li>Sticky Toffee Pudding - ₹230</li>
+                    <li>Baklava - ₹270</li>
+                    <li>Fruit Tart - ₹240</li>
+                    <li>Panna Cotta - ₹250</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <img src="images/Salad.jpg" alt="Salads">
+            <div class="menu-details">
+                <h2>Salads</h2>
+                <ul>
+                    <li>Caesar Salad - ₹200</li>
+                    <li>Greek Salad - ₹180</li>
+                    <li>Chicken Salad - ₹220</li>
+                    <li>Fruit Salad - ₹160</li>
+                    <li>Quinoa Salad - ₹210</li>
+                    <li>Thai Salad - ₹190</li>
+                    <li>Caprese Salad - ₹200</li>
+                    <li>Spinach Salad - ₹180</li>
+                    <li>Coleslaw - ₹170</li>
+                    <li>Roasted Veggie Salad - ₹210</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="Contact-info">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h2>Crimson Canvas</h2>
+                    <p style="font-size: 18px;">A Feast For The Senses.</p>
+                </div>
+                <div class="footer-middle">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: noreply@crimsoncanvas.com</li>
+                        <li>Phone: +91 99496 73148</li>
+                        <li>Address: Opposite Ramanaidu Studios, Dr NTR Beach Rd, Thimmapuram, Visakhapatnam, Andhra Pradesh-530048</li>
+                    </ul>
+                </div>
+                <div class="footer-middle">
+                  <h3>Timings</h3>
+                  <ul>
+                      <li>Monday-Friday : 12pm to 11 pm</li>
+                      <li>Saturday & Sunday : 11am to 11:30pm</li>
+                  </ul>
+              </div>
+                <div class="footer-right">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com/lalith.akash.66"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://x.com/LalithAkash2346"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/lalithakash/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/lalith-akash-kolli/"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

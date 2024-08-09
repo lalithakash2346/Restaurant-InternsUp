@@ -1,0 +1,191 @@
+html, body {
+    height: 125vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure the background covers the full height minus the navbar height */
+.background {
+    flex: 1;
+    margin-top: 130px; /* Adjust this value to match the height of your navbar */
+    position: relative;
+    background-image: url('images/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    padding: 50px; /* Padding to position the content away from the edges */
+    animation: fadeIn 2s ease-in-out;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+}
+
+.welcome-heading {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    animation: slideInLeft 1s ease-out;
+}
+
+button.btn-primary {
+    background-color: crimson;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    animation: slideInLeft 1.5s ease-out;
+}
+
+button.btn-primary:hover {
+    background-color: darkred;
+}
+
+.navbar-brand img {
+    height: 130px;
+}
+
+.nav-link.text {
+    color: black;
+}
+
+.nav-link.text:hover {
+    color: crimson;
+}
+
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.bodoni-moda-sc-navlink {
+    font-family: "Bodoni Moda SC", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.cinzel-welcome-heading {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: rgb(255, 251, 251);
+    font-size: 55px;
+}
+
+.black-ops-one-regular {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.cinzel-welcome-heading:hover
+{
+    
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-mono-navlink {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    width: 120%;
+}
+
+.exo-2-navlink {
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 22px;
+}
+
+.content {
+    padding: 20px;
+    color: #fff;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-middle, .footer-right {
+    flex: 1;
+    padding: 0 20px;
+    max-width: 33%;
+    box-sizing: border-box;
+    font-family: 'Cinzel', serif;
+}
+
+.footer-left h2 {
+    font-weight: 700;
+}
+
+.footer-left p {
+    margin: 0;
+}
+
+.footer-middle ul, .footer-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-middle ul li, .footer-right ul li {
+    margin-bottom: 10px;
+}
+
+.footer-right .social-media {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-right .social-media li {
+    margin: 0 10px;
+}
+
+.footer-right .social-media a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.footer-right .social-media a:hover {
+    color: crimson;
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crimson Canvas</title>
+    <link rel="stylesheet" href="Res.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Kalnia+Glaze:wght@100..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+        
+        body {
+          font-family: 'Exo 2', sans-serif;
+          background-color: #f8f9fa;
+          margin: 0;
+          padding: 0;
+          height: 100vh;
+          display: flex;
+          flex-direction: column;
+        }
+  
+        .navbar-brand img {
+          height: 80px;
+        }
+  
+        .navbar-nav .nav-link {
+          font-size: 1.1rem;
+        }
+  
+        .reviews-page {
+          padding: 50px;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+  
+        .reviews-page h1 {
+          font-size: 2.5rem;
+          margin-bottom: 30px;
+          margin-top: 20px;
+        }
+  
+        .reviews-container {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          gap: 30px; /* Space between review cards */
+        }
+  
+        .review-card {
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          width: 300px; /* Fixed width for review cards */
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          text-align: center;
+        }
+  
+        .review-card img {
+          width: 150px; /* Increased image size */
+          height: 150px; /* Increased image size */
+          object-fit: cover;
+          border-radius: 50%;
+          margin-bottom: 15px;
+        }
+  
+        .review-card p {
+          font-size: 1.2rem;
+          color: #333;
+        }
+  
+        .footer {
+          background: #343a40;
+          color: #fff;
+          padding: 20px 0;
+          flex-shrink: 0;
+        }
+  
+        .footer h2, .footer h3 {
+          color: #fff;
+        }
+  
+        .footer .social-media a {
+          color: #fff;
+          margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top opacity">
+        <a class="navbar-brand" href="Home-Page.html"><img src="images/Logo.png" style="height: 110px;"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav m-auto">
+            <li class="nav-item active m-4">
+              <a class="nav-link text exo-2-navlink" href="Menu-Page.html"><i class="fa-solid fa-bars"></i> Menus <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item m-4">
+              <a class="nav-link text exo-2-navlink" href="About.html"><i class="fas fa-info-circle"></i> About</a>
+            </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text exo-2-navlink" href="Reviews.html"><i class="fa-solid fa-star"></i> Reviews</a>
+              </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text exo-2-navlink" href="#Contact-info"><i class="fa-solid fa-location-crosshairs"></i> Hours and Location</a>
+            </li>
+            <li class="nav-item m-4">
+                <a class="nav-link text exo-2-navlink" href="#Contact-info"><i class="fa-solid fa-phone"></i> Contact Info</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="reviews-page">
+        <h1 style="margin-top: 90px;">What Our Customers Are Saying</h1>
+        <div class="reviews-container">
+            <div class="review-card">
+                <img src="images/Review1.jpg" alt="Reviewer 1">
+                <p>"Crimson Canvas offers an unforgettable dining experience. The food is absolutely delicious, and the ambiance is perfect. Highly recommend!"</p>
+                <p>- Surya</p>
+            </div>
+            
+            <div class="review-card">
+                <img src="images/Review2.jpg" alt="Reviewer 2">
+                <p>"A fantastic place with great food and excellent service. Every visit has been a pleasure. The traditional dishes are a highlight!"</p>
+                <p>- Sam</p>
+            </div>
+
+            <div class="review-card">
+                <img src="images/Review3.jpg" alt="Reviewer 3">
+                <p>"I love Crimson Canvas! The menu offers a delightful mix of traditional flavors and modern twists. The atmosphere is cozy and inviting."</p>
+                <p>- Sash</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer" id="Contact-info">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h2>Crimson Canvas</h2>
+                    <p style="font-size: 18px;">A Feast For The Senses.</p>
+                </div>
+                <div class="footer-middle">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: noreply@crimsoncanvas.com</li>
+                        <li>Phone: +91 99496 73148</li>
+                        <li>Address: Opposite Ramanaidu Studios, Dr NTR Beach Rd, Thimmapuram, Visakhapatnam, Andhra Pradesh-530048</li>
+                    </ul>
+                </div>
+                <div class="footer-middle">
+                  <h3>Timings</h3>
+                  <ul>
+                      <li>Monday-Friday : 12pm to 11 pm</li>
+                      <li>Saturday & Sunday : 11am to 11:30pm</li>
+                  </ul>
+              </div>
+                <div class="footer-right">
+                    <h3>Follow Us</h3>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com/lalith.akash.66"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://x.com/LalithAkash2346"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/lalithakash/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/lalith-akash-kolli/"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

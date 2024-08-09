@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Schema</title>
+    <link rel="stylesheet" href="Res.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top opacity">
+        <a class="navbar-brand" href="Home-Page.html"><img src="images/Logo.png" style="height: 110px;"/></a>
+    </nav>
+    <div class="container mt-5">
+        <h2 class="text-center" style="margin-top: 90px;">Booking Schema</h2>
+        <div id="booking-details" class="mt-4">
+            <!-- Booking details will be injected here -->
+        </div>
+    </div>
+    <script>
+        fetch('/view-booking-schema-data')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('booking-details');
+                if (data.length > 0) {
+                    let table = '<table class="table table-bordered"><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Date</th><th>Time</th></tr></thead><tbody>';
+                    data.forEach(booking => {
+                        table += `<tr><td>${booking._id}</td><td>${booking.name}</td><td>${booking.email}</td><td>${booking.phone}</td><td>${booking.date}</td><td>${booking.time}</td></tr>`;
+                    });
+                    table += '</tbody></table>';
+                    container.innerHTML = table;
+                } else {
+                    container.innerHTML = '<p>No bookings found.</p>';
+                }
+            })
+            .catch(error => console.error('Error fetching booking schema:', error));
+    </script>
+</body>
+</html>
