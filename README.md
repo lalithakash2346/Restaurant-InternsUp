@@ -14,8 +14,12 @@ Prerequisites
 
 
 3.Running the Project
+ 
+ 
  i)To test the project:
     Navigate to the expressjs folder:  cd expressjs
+ 
+ 
  ii)Run the application:  node app.js
 
  
